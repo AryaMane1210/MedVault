@@ -1,0 +1,3 @@
+if (mongoose.connection.readyState >= 1) return;
+👉 If already connected to MongoDB, then don’t connect again — just exit the function.
+Prevents duplicate connections.

@@ -1,0 +1,36 @@
+Signup auth
+
+🧠 1. export const signup = async (req, res) => {
+What’s happening:
+export const signup: This defines a function named signup and exports it so other files (like your routes file) can use it.
+
+async: Means this function can use await inside (for waiting on database calls, etc.)
+
+(req, res): These are your request and response objects — classic Express.js pattern.
+
+💬 Think of req as: "what the user sent you"
+And res as: "what you’ll send back to them"
+
+🧪 2. const { error } = authSchemaValidation.validate(req.body);
+What this line does:
+authSchemaValidation: This is your Joi schema — a set of rules that defines what a valid signup request should look like (like email must be valid, password must be min 6 chars, etc.)
+
+validate(req.body): This runs the Joi check on the incoming request data (like { email: "a@gmail.com", password: "1234" })
+
+const { error } = ...:
+This is a JavaScript trick called object destructuring.
+
+It’s the same as doing:
+const result = authSchemaValidation.validate(req.body);
+const error = result.error;
+You're just pulling the error field directly out of the returned object in one go.
+
+🚨 3. The if (error) block:
+if (error) {
+    return res.status(400).json({ message: error.details[0].message });
+}
+If Joi found a problem (e.g., "password is too short"), error will not be null.
+
+So we send a 400 Bad Request back to the client with the error message (friendly, human-readable one).
+
+Example error: "password" must be at least 6 characters long
