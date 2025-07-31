@@ -34,9 +34,40 @@ Treatment starts immediately, correctly, and safely.
 
 ---
 
+## 📸 Features
+
+- 🧾 Add, update, and manage medical records (blood type, allergies, conditions, etc.)
+- 🔒 Secure authentication with JWT
+- 🧠 Encrypted health information storage using MongoDB
+- 📱 Clean and responsive frontend (React / Next.js)
+- 📥 QR Code generation for emergency access
+- 🗃️ Multilingual support (planned)
+- 🧬 Health goal-based suggestions (planned)
+- 🌱 Built for users, doctors, and caregivers alike
+
+---
+
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/AryaMane1210/MedVault.git
 cd MedVault
+```
+
+### 2. Install Dependencies
+```npm i ```
+
+### 3. Run backend folder
+
+```
+    cd backend
+    node server.js
+```
+
+### 4. Run frontend folder
+
+```
+cd frontend
+npm run dev
+```
