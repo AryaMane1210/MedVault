@@ -68,6 +68,6 @@ cd MedVault
 ### 4. Run frontend folder
 
 ```
-cd frontend
-npm run dev
+    cd frontend
+    npm run dev
 ```
