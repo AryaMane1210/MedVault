@@ -1,6 +1,6 @@
 # 🩺 MedVault
 
-**MedVault** is a secure, smart, and user-friendly platform that allows individuals to safely store, manage, and share their critical medical information. Whether it’s your allergy history, chronic conditions, blood group, or emergency contacts — MedVault keeps your health records organized and accessible when you need them most.
+**MedVault** is a secure, smart, and user-friendly platform that allows individuals to safely store, manage, and share their critical medical information. Whether it’s your allergy history, chronic conditions, blood group, or emergency contacts — MedVault keeps your health records organized and accessible through offline QR Codes when you need them most.
 
 In today’s fast-paced and unpredictable world, timely access to accurate health data can be lifesaving. MedVault is designed with that urgency in mind — especially for individuals who may be vulnerable during emergencies, such as senior citizens, people with chronic illnesses, or accident victims. With features like real-time QR code access, encrypted health profiles, and a clean, intuitive interface, the app bridges the gap between patients, first responders, and medical professionals.
 
