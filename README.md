@@ -39,10 +39,8 @@ Treatment starts immediately, correctly, and safely.
 - 🧾 Add, update, and manage medical records (blood type, allergies, conditions, etc.)
 - 🔒 Secure authentication with JWT
 - 🧠 Encrypted health information storage using MongoDB
-- 📱 Clean and responsive frontend (React / Next.js)
+- 📱 Clean and responsive frontend (React)
 - 📥 QR Code generation for emergency access
-- 🗃️ Multilingual support (planned)
-- 🧬 Health goal-based suggestions (planned)
 - 🌱 Built for users, doctors, and caregivers alike
 
 ---
