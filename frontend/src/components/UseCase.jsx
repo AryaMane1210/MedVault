@@ -1,76 +1,109 @@
-const UseCase =() =>{
+
+import {  FaHeartbeat,FaPills,FaTint,FaAllergies,FaBrain,FaBug,} from "react-icons/fa";
+
+const RealLifeCases = () => {
+  const cases = [
+    {
+      title: "Peanut Allergy Emergency",
+      scenario: "Child collapses at school after a snack.",
+      action: "Thinks it’s choking — delays EpiPen.",
+      by: "Teacher",
+      risk: "Delayed treatment could cause suffocation.",
+      medvault: "QR reveals peanut allergy + EpiPen location in lunchbox pocket.",
+      icon: <FaAllergies />,
+      iconBg: "bg-blue-100 text-blue-700",
+    },
+    {
+      title: "Penicillin Allergy",
+      scenario: "Accident victim rushed to hospital.",
+      action: "Starts IV penicillin.",
+      by: "Doctor",
+      risk: "Can cause anaphylaxis, difficulty breathing, possibly death.",
+      medvault: "QR warns ⚠️ Allergic to penicillin – use alternative.",
+      icon: <FaPills />,
+      iconBg: "bg-indigo-100 text-indigo-700",
+    },
+    {
+      title: "Low Blood Sugar Emergency",
+      scenario: "Diabetic teen faints at sports practice.",
+      action: "Assumes it's exhaustion — delays sugar intake.",
+      by: "Coach",
+      risk: "Blood sugar crash could lead to seizure or coma.",
+      medvault: "QR reveals Type 1 diabetes + glucose tablets in gym bag.",
+      icon: <FaTint />,
+      iconBg: "bg-sky-100 text-sky-700",
+    },
+    {
+      title: "Latex Allergy",
+      scenario: "Patient comes in for emergency surgery.",
+      action: "Uses latex gloves, catheters, tubing.",
+      by: "Staff",
+      risk: "Severe rashes, difficulty breathing, or internal reactions.",
+      medvault: 'Warns: “Use only latex-free medical equipment.”',
+      icon: <FaAllergies />,
+      iconBg: "bg-blue-200 text-blue-800",
+    },
+    {
+      title: "Epilepsy",
+      scenario: "Man collapses and starts convulsing.",
+      action: "Tries to restrain him, calls ambulance.",
+      by: "Bystander",
+      risk: "Head injury or mistreatment during seizure.",
+      medvault:
+        'QR reveals epilepsy + instructions: “Do not restrain, turn the patient sideways.”',
+      icon: <FaBrain />,
+      iconBg: "bg-purple-100 text-purple-700",
+    },
+    {
+      title: "Bee Sting Allergy",
+      scenario: "Boy stung during park picnic.",
+      action: "Thinks it’s just a sting — gives ice.",
+      by: "Friend",
+      risk: "Swelling blocks airway within minutes.",
+      medvault: "QR shows bee allergy + EpiPen in backpack.",
+      icon: <FaBug />,
+      iconBg: "bg-yellow-100 text-yellow-700",
+    },
+  ];
+
   return (
-    <section className="px-16 py-16">
-      <p> Real - Life Cases</p>
-      <div className="flex flex-wrap justify-center gap-10">
-        <div className=" max-w-sm px-4 py-4 bg-blue-100 rounded-2xl border-4 border-blue-200 sm:w-[400px] hover:bg-blue-200">
-          <h2 className="text-xl font-bold text-blue-900 leading-snug">Peanut Allergy Emergency</h2>
-           <p ><strong>Scenario:</strong> Child collapses at school after a snack</p>
-            <p><strong>Teacher’s Action:</strong> Thinks it’s choking — delays EpiPen.</p>
-            <p><strong>Risk:</strong> Delayed treatment could cause suffocation.</p>
-            <p className="font-semibold text-red-600">
-              MedVault: QR reveals peanut allergy + EpiPen location in lunchbox pocket.
-            </p>
-        </div>
+    <section className="bg-white py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-5xl font-bold text-center text-blue-900 mb-16 leading-tight">
+          Real-Life Medical Emergencies <br />
+          
+        </h2>
 
-  
-
-        <div className=" max-w-sm px-4 py-4 bg-blue-100 rounded-2xl border-4 border-blue-200 sm:w-[400px] hover:bg-blue-200">
-          <h3 className="text-xl font-bold text-blue-900 leading-snug">Penicillin Allergy</h3>
-           <p><strong>Scenario:</strong> Accident victim rushed to hospital.</p>
-            <p><strong>Doctor’s Action:</strong> Starts IV penicillin (a common first-line drug).</p>
-            <p><strong>Risk:</strong> Can cause anaphylaxis, difficulty breathing,  possibly death.
-</p>
-            <p className="font-semibold text-red-600">
-              MedVault: QR warns ⚠️ Allergic to penicillin – use alternative.
-
-            </p>
-        </div>
-
-        <div className=" max-w-sm px-4 py-4 bg-blue-100 rounded-2xl border-4 border-blue-200 sm:w-[400px] hover:bg-blue-200">
-          <h3 className="text-xl font-bold text-blue-900 leading-snug"> Low Blood Sugar Emergency</h3>
-           <p><strong>Scenario:</strong> Diabetic teen faints at sports practice.</p>
-            <p><strong>Coach’s Action:</strong> Assumes it's exhaustion — delays sugar intake.</p>
-            <p><strong>Risk:</strong> Blood sugar crash could lead to seizure or coma.</p>
-            <p className="font-semibold text-red-600">
-              MedVault: QR reveals Type 1 diabetes + glucose tablets in gym bag.
-            </p>
-        </div>
-
-        <div className=" max-w-sm px-4 py-4 bg-blue-100 rounded-2xl border-4 border-blue-200 sm:w-[400px] hover:bg-blue-200">
-          <h3 className="text-xl font-bold text-blue-900 leading-snug">Latex Allergy</h3>
-           <p><strong>Scenario:</strong>  Patient comes in for emergency surgery.</p>
-            <p><strong>Staff’s Action:</strong> Latex gloves, catheters, tubing.</p>
-            <p><strong>Risk:</strong> Can cause severe rashes, difficulty breathing, or internal reactions during surgery.
-.</p>
-            <p className="font-semibold text-red-600">
-              MedVault: Warns: “Use only latex-free medical equipment.”
-            </p>
-        </div>
-
-        
-
-        <div className=" max-w-sm px-4 py-4 bg-blue-100 rounded-2xl border-4 border-blue-200 sm:w-[400px] hover:bg-blue-200">
-          <h3 className="text-xl font-bold text-blue-900 leading-snug">Epilepsy</h3>
-           <p><strong>Scenario:</strong> Man collapses and starts convulsing.</p>
-            <p><strong>Bystander’s Action:</strong> Tries to restrain him, calls ambulance.</p>
-            <p><strong>Risk:</strong> Head injury or mistreatment during seizure.</p>
-            <p className="font-semibold text-red-600">
-              MedVault:  QR reveals epilepsy + instructions: "Do not restrain, turn the patient sideways."
-            </p>
-        </div>
-
-        <div className=" max-w-sm px-4 py-4 bg-blue-100 rounded-2xl border-4 border-blue-200 sm:w-[400px] hover:bg-blue-200">
-          <h3 className="text-xl font-bold text-blue-900 leading-snug">Bee Sting Allergy/Emergency</h3>
-           <p><strong>Scenario:</strong> Boy stung during park picnic.</p>
-            <p><strong>Friend’s Action:</strong> Thinks it’s just a sting — gives ice.</p>
-            <p><strong>Risk:</strong> Swelling blocks airway within minutes.</p>
-            <p className="font-semibold text-red-600">
-              MedVault: QR shows bee allergy + EpiPen in backpack.
-            </p>
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+          {cases.map((c, i) => (
+            <div
+              key={i}
+              className="backdrop-blur-md bg-white/70 border border-blue-100 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+            >
+              <div
+                className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full shadow-inner ${c.iconBg}`}
+              >
+                <span className="text-2xl">{c.icon}</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{c.title}</h3>
+              <p className="text-sm text-gray-600 mb-1">
+                <strong className="text-gray-700">Scenario:</strong> {c.scenario}
+              </p>
+              <p className="text-sm text-gray-600 mb-1">
+                <strong className="text-gray-700">{c.by}’s Action:</strong> {c.action}
+              </p>
+              <p className="text-sm text-gray-600 mb-1">
+                <strong className="text-gray-700">Risk:</strong> {c.risk}
+              </p>
+              <p className="text-sm text-red-600 font-medium mt-3">
+                MedVault Insight: {c.medvault}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
-export default UseCase;
+  );
+};
+
+export default RealLifeCases;

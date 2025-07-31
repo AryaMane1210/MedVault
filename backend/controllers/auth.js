@@ -50,7 +50,7 @@ export const login= async(req,res)=>{
         }
         const token = jwt.sign({id:user._id}, process.env.JWT_SECRET, {expiresIn: "1h"});
         res.status(200).json({
-            mesaage: "Login successful",
+            message: "Login successful",
             token,
             user:{id:user._id, email: user.email}
         });
@@ -58,4 +58,45 @@ export const login= async(req,res)=>{
     }catch(err){
         res.status(500).json({massage: "Login failed", error: err.message})
     }
+};
+
+export const changePassword = async (req, res) => {
+  try {
+    const userId = req.user.id;
+      console.log("🔍 User ID:", userId);
+    const { oldPassword, newPassword } = req.body;
+       console.log("🧪 Passwords received");
+
+    const user = await Auth.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found." });
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) return res.status(400).json({ message: "Incorrect old password." });
+
+    const hashedNew = await bcrypt.hash(newPassword, 10);
+    user.password = hashedNew;
+    await user.save();
+
+    res.status(200).json({ message: "✅ Password changed successfully!" });
+  } catch (err) {
+      console.error("🔥 Server error in changePassword:", err);
+    res.status(500).json({ message: "Server error. Try again." });
+  }
+};
+
+export const deleteUser = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    const deletedUser = await Auth.findByIdAndDelete(userId);
+
+    if (!deletedUser) {
+      return res.status(404).json({ message: 'User not found.' });
+    }
+
+    res.status(200).json({ message: '🗑️ Account deleted successfully.' });
+  } catch (error) {
+    console.error("❌ Error deleting user:", error);
+    res.status(500).json({ message: 'Server error while deleting account.' });
+  }
 };

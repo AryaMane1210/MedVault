@@ -14,7 +14,7 @@ export const updateDetails = async (req,res)=>{
             return res.status(404).json({ message: "Details not found for user" });
         }
 
-        // Merge existing with new updates
+       
         const updatedData = {
              name: req.body.name ?? existing.name,
                 age: req.body.age ?? existing.age,
@@ -53,7 +53,8 @@ export const updateDetails = async (req,res)=>{
 
         const updated = await Details.findOneAndUpdate(
             {user: req.user.id},
-            {   ...updatedData, qrCode
+            {   ...updatedData, qrCode,
+                 lastUpdated: new Date()
             },
             {new:true}
         );

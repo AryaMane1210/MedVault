@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ isLoggedIn }) => {
+   const navigate = useNavigate();
+
+    const handleLogout = () => {
+      localStorage.removeItem('token');
+      navigate('/'); 
+    };
+
   return (
     <nav className="p-4 bg-blue-900 text-white flex justify-between">
       <div className="flex items-center space-x-2">
@@ -9,10 +17,20 @@ const Navbar = ({ isLoggedIn }) => {
   </div>
       
       {isLoggedIn && (
-        <div className="space-x-4">
-          <button>Dashboard</button>
-          <button>Logout</button>
-        </div>
+        <div>
+        <button
+            className="bg-yellow-600 hover:bg-yellow-500 px-3 py-1 rounded"
+            onClick={() => navigate('/settings')}
+          >
+            Settings
+          </button>
+          <button
+            className="bg-red-600 hover:bg-red-500 px-3 py-1 rounded"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+          </div>
       )}
     </nav>
   );

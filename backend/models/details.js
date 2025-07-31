@@ -43,11 +43,13 @@ const detailScehma= new mongoose.Schema({
     note:{
         type: String,
     },
+    
     user:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Auth",
         required: true
     }
-});
+}, { timestamps: { createdAt: 'created_at', updatedAt: 'lastUpdated' } },
+);
 
 export default mongoose.model("UserDetails", detailScehma);
